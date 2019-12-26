@@ -1,0 +1,60 @@
+﻿<Window x:Class="EyeMedicine.Modify"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EyeMedicine"
+        mc:Ignorable="d"
+        Background="Gray"
+        Title="修改信息" Height="450" Width="400" WindowStartupLocation="CenterScreen" Topmost="True" WindowStyle="None" ResizeMode="NoResize" >
+    <Border  CornerRadius="25" Background="White" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width=" 50"></ColumnDefinition>
+                <ColumnDefinition  Width="65"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition  Width=" 50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon Kind="Numbers"  Width="45" Height="30"  Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+            <TextBox Name="PatientIdWidget" materialDesign:HintAssist.Hint="ID" Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" IsEnabled="False" VerticalAlignment="Bottom"/>
+            <materialDesign:PackIcon  Kind="AccountOutline" Width="45" Height="30"   Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <TextBox materialDesign:HintAssist.Hint="Name" Name="PatientNameWidget" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"  />
+            <materialDesign:PackIcon Kind="GenderMaleFemale" Width="45" Height="30" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <ComboBox x:Name="PatientSexWidget" Grid.Column="2" Grid.Row="2"  materialDesign:HintAssist.Hint="Sex">
+                <ComboBoxItem IsSelected="True">男</ComboBoxItem>
+                <ComboBoxItem>女</ComboBoxItem>
+            </ComboBox>
+            <materialDesign:PackIcon Kind="Call" Width="45" Height="30" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <TextBox Name="PatientPhoneWidget" Grid.Column="2" Grid.Row="3" materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Center" />
+            <materialDesign:PackIcon Kind="Cake" Width="45" Height="30" Grid.Column="1" Grid.Row="4" />
+            <DatePicker Name="BirthDateWidget"  Grid.Column="2" Grid.Row="4" materialDesign:HintAssist.Hint="BirthDate"/>
+            <materialDesign:PackIcon Kind="CalendarPlus" Width="45" Height="30" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <DatePicker Name="CreatDateWidget"  Grid.Column="2" Grid.Row="5" materialDesign:HintAssist.Hint="CreatDate" />
+            <Grid Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border MouseLeave="BorderMouseLeave" MouseEnter="BorderMouseEnter" Grid.Column="0" CornerRadius="10"  Width="115" Height="56" HorizontalAlignment="Right" Margin="0,0,20,0" Background="#FFEBEAE9">
+                    <Button  Name="FinishWidget" Content="完成修改" Grid.Column="0" Grid.Row="0"  Click="FinishWidget_Click" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto"/>
+                </Border>
+                <Border MouseLeave="BorderMouseLeave" MouseEnter="BorderMouseEnter" Grid.Column="1" CornerRadius="10"  Width="115" Height="56" HorizontalAlignment="Right" Margin="0,0,20,0"  Background="#FFEBEAE9" >
+                    <Button Name="CancelWidget"  Height="Auto" Content=" 取消" Click="CancelWidget_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                </Border>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>
